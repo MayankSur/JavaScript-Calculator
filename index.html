@@ -18,7 +18,7 @@
     if (num == "SR"){
       var x = document.getElementById("textbox").value;
       console.log(x);
-      x = sqrt(x);
+      x = Math.sqrt(x);
       document.getElementById("textbox").value = x;
       return;
     }
@@ -113,7 +113,7 @@
   <input type="button" class="button" ype="button" name="C" value="C" onclick="Clear();"></input>
   <input class="button" type="button" name="<" value="<" onclick="BackSpace();"></input>
   <input class="button" type="button" id="/" name="/" value="/" onClick="insertValue(document.getElementById('/').value);"></input>
-  <input class="button" type="button" id="*" name="*" value="x" onClick="insertValue(document.getElementById('*').value););"></input>
+  <input class="button" type="button" id="*" name="*" value="x" onClick="insertValue(document.getElementById('*').value);"></input>
   <br>
   <input class="button" type="button" name="7" value="7" onClick="insertValue(7);"></input>
   <input class="button" type="button" name="8" value="8" onClick="insertValue(8);"></input>
@@ -131,7 +131,7 @@
   <input class="button" type="button" name="=" value="=" onclick="Evaluate();"> </input>
   <br>
   <input class="button" style="width:206px;"type="button" name="0" value="0" onClick="insertValue(0);"></input>
-  <input class="button" type="button" name="." value="." onClick="insertValue(.);"></input>
+  <input class="button" type="button" name="." value="." onClick="insertValue('.');"> </input>
   <input class="button" type="button" name="Shft" value="Shft" onClick="Shift();"></input>
   <br>
 
