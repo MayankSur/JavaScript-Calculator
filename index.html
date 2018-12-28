@@ -3,7 +3,23 @@
 <html>
 <!--JavaScript Region-->
   <script>
+  var x = false;
   function insertValue(num){
+    if (num == "SQ"){
+      var x = document.getElementById("textbox").value;
+      console.log(x);
+      x = x*x;
+      document.getElementById("textbox").value = x;
+      return;
+
+    }
+    if (num == "SR"){
+      var x = document.getElementById("textbox").value;
+      console.log(x);
+      x = sqrt(x);
+      document.getElementById("textbox").value = x;
+      return;
+    }
   console.log(num);
   document.getElementById("textbox").value += num;
 }
@@ -24,9 +40,36 @@
     document.getElementById("textbox").value = x;
 
   }
+  function Shift(){
+    x = !x;
+    console.log(x);
+    //Orginal Values
+    if (x == false){
+      var tmp = document.getElementById('/').value;
+      var tmp2 = document.getElementById('*').value;
+      console.log(tmp);
+      console.log(tmp2);
+      document.getElementById('/').value = "/";
+      document.getElementById('*').value = "*";
+    }
+  //Updated Values
+    if (x == true){
+      var tmp = document.getElementById('/').value;
+      var tmp2 = document.getElementById('*').value;
+      console.log(tmp);
+      console.log(tmp2);
+      document.getElementById('/').value = "SQ";
+      document.getElementById('*').value = "SR";
+    }
+  }
+
   </script>
 
 <style>
+
+.page{
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
 
 .center{
   display: block;
@@ -52,7 +95,9 @@
 </style>
 
 <!--Main Body of the HTML-->
+<!--Main Body of the HTML-->
 <body>
+<div class="page">
 <h1 class="center"> My First Calculator Program </h1>
 
 <!-- Form that creates the calculator-->
@@ -61,28 +106,34 @@
   <input class="output" id="textbox" name="calculation" ><br>
 </form>
 <table>
-  <button class="button" type="button" name="C" onclick="Clear();"> C </button>
-  <button class="button" type="button" name="<" onclick="BackSpace();"> < </button>
-  <button class="button" type="button" name="/" onClick="insertValue('/');" > / </button>
-  <button class="button" type="button" name="*" onClick="insertValue('*');" > x </button>
+  <input type="button" class="button" ype="button" name="C" value="C" onclick="Clear();"></input>
+  <input class="button" type="button" name="<" value="<" onclick="BackSpace();"></input>
+  <input class="button" type="button" id="/" name="/" value="/" onClick="insertValue(document.getElementById('/').value);"></input>
+  <input class="button" type="button" id="*" name="*" value="x" onClick="insertValue(document.getElementById('*').value););"></input>
   <br>
-  <button class="button" type="button" name="7" onClick="insertValue(7);"> 7 </button>
-  <button class="button" type="button" name="8" onClick="insertValue(8);" > 8 </button>
-  <button class="button" type="button" name="9" onClick="insertValue(9);"> 9 </button>
-  <button class="button" type="button" name="+" onClick="insertValue('+');"> + </button>
+  <input class="button" type="button" name="7" value="7" onClick="insertValue(7);"></input>
+  <input class="button" type="button" name="8" value="8" onClick="insertValue(8);"></input>
+  <input class="button" type="button" name="9" value="9" onClick="insertValue(9);"></input>
+  <input class="button" type="button" name="+" value="+" onClick="insertValue('+');"></input>
   <br>
-  <button class="button" type="button" name="4" onClick="insertValue(4);"> 4 </button>
-  <button class="button" type="button" name="5" onClick="insertValue(5);"> 5 </button>
-  <button class="button" type="button" name="6" onClick="insertValue(6);"> 6 </button>
-  <button class="button" type="button" name="-" onClick="insertValue('-');"> - </button>
+  <input class="button" type="button" name="4" value="4" onClick="insertValue(4);"></input>
+  <input class="button" type="button" name="5" value="5" onClick="insertValue(5);"></input>
+  <input class="button" type="button" name="6" value="6" onClick="insertValue(6);"></input>
+  <input class="button" type="button" name="-" value="-" onClick="insertValue('-');"></input>
   <br>
-  <button class="button" type="button" name="1" onClick="insertValue(1);"> 1 </button>
-  <button class="button" type="button" name="2" onClick="insertValue(2);"> 2 </button>
-  <button class="button" type="button" name="3" onClick="insertValue(3);"> 3 </button>
-  <button class="button" type="button" name="=" onclick="Evaluate();"> = </button>
+  <input class="button" type="button" name="1" value="1" onClick="insertValue(1);"></input>
+  <input class="button" type="button" name="2" value="2" onClick="insertValue(2);"></input>
+  <input class="button" type="button" name="3" value="3" onClick="insertValue(3);"></input>
+  <input class="button" type="button" name="=" value="=" onclick="Evaluate();"> </input>
   <br>
+  <input class="button" style="width:206px;"type="button" name="0" value="0" onClick="insertValue(0);"></input>
+  <input class="button" type="button" name="." value="." onClick="insertValue(.);"></input>
+  <input class="button" type="button" name="Shft" value="Shft" onClick="Shift();"></input>
+  <br>
+
 </table>
 
+</div>
 </div>
 </body>
 
