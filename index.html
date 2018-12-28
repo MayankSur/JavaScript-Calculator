@@ -3,7 +3,9 @@
 <html>
 <!--JavaScript Region-->
   <script>
+// Boolean Value to track the current state of the calculator
   var x = false;
+//
   function insertValue(num){
     if (num == "SQ"){
       var x = document.getElementById("textbox").value;
@@ -23,16 +25,17 @@
   console.log(num);
   document.getElementById("textbox").value += num;
 }
+// Clear Function
   function Clear(){
   document.getElementById("textbox").value = "";
   }
-
+// BackSpace Function
   function BackSpace(){
     var x = document.getElementById("textbox").value;
     x = x.slice(0,-1);
     document.getElementById("textbox").value = x;
   }
-
+// Evaluate Function
   function Evaluate(){
     var x = document.getElementById("textbox").value;
     console.log(x);
@@ -40,10 +43,11 @@
     document.getElementById("textbox").value = x;
 
   }
+// Start Shift functionality
   function Shift(){
     x = !x;
     console.log(x);
-    //Orginal Values
+//Orginal Values
     if (x == false){
       var tmp = document.getElementById('/').value;
       var tmp2 = document.getElementById('*').value;
@@ -52,7 +56,7 @@
       document.getElementById('/').value = "/";
       document.getElementById('*').value = "*";
     }
-  //Updated Values
+//Updated Values
     if (x == true){
       var tmp = document.getElementById('/').value;
       var tmp2 = document.getElementById('*').value;
@@ -65,6 +69,7 @@
 
   </script>
 
+<!--CSS Region-->
 <style>
 
 .page{
@@ -94,7 +99,6 @@
 
 </style>
 
-<!--Main Body of the HTML-->
 <!--Main Body of the HTML-->
 <body>
 <div class="page">
